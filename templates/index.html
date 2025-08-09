@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block title %}Home - College ChatBot{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="text-center py-20 bg-gradient-to-br from-blue-50 to-purple-100 rounded-xl shadow-md" data-aos="fade-up">
+  <h1 class="text-5xl font-bold text-blue-800 mb-6 animate-bounce">Welcome to College ChatBot Portal</h1>
+  <p class="text-lg text-gray-700 mb-8">Your smart assistant for all college queries – accessible 24/7!</p>
+  <a href="/dashboard" class="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-blue-500 hover:to-purple-500 text-white px-8 py-3 rounded-full shadow-lg transition duration-500 transform hover:scale-105">
+    Explore ChatBots
+  </a>
+</section>
+
+<!-- About Section -->
+<!-- <section class="py-16 px-4 md:px-20 bg-white mt-16" data-aos="fade-up">
+  <div class="grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <img src="../static/images/home/about-college.avif" alt="About College" class="rounded-xl shadow-xl" />
+    </div> -->
+  <div>
+  <h2 class="text-4xl font-bold text-blue-800 mb-4 text-center">About This Portal</h2>
+  <p class="text-gray-700 text-lg leading-relaxed text-center">
+    This platform is designed to help students and staff interact with college-related resources efficiently.
+    Powered by AI, our bots can help you navigate queries, access academic info, and get support — anytime.
+  </p>
+  <div class="text-center">
+    <a href="/about" class="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full transition-transform transform hover:scale-105">
+      Learn More
+    </a>
+  </div>
+</div>
+
+<!-- Why Use Our ChatBots -->
+<section class="grid md:grid-cols-2 gap-12 mt-16 px-4 md:px-20">
+  <div data-aos="fade-right">
+    <img src="../static/images/home/Ai Bot.avif" alt="AI Bot" class="w-full h-auto rounded-xl shadow-lg" />
+  </div>
+  <div data-aos="fade-left" class="flex flex-col justify-center">
+    <h2 class="text-4xl font-semibold text-blue-800 mb-4">Why Use Our ChatBots?</h2>
+    <ul class="list-disc text-gray-600 text-lg pl-5 space-y-2">
+      <li>Ask questions related to your college</li>
+      <li>Available anytime, anywhere</li>
+      <li>Smart, fast, and accurate responses</li>
+      <li>Powered by <strong>Botpress AI</strong></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-16 px-4 md:px-20 bg-purple-50 mt-20 rounded-xl shadow-inner" data-aos="fade-up">
+  <h2 class="text-center text-4xl font-bold text-purple-700 mb-12">Features You’ll Love</h2>
+  <div class="grid md:grid-cols-3 gap-10 text-center">
+    <div class="bg-white rounded-lg shadow-md p-6 transition hover:shadow-xl">
+      <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" class="h-16 mx-auto mb-4" alt="Live Chat">
+      <h3 class="text-xl font-semibold mb-2">Live Support</h3>
+      <p class="text-gray-600">Get instant help from AI-powered bots around the clock.</p>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-6 transition hover:shadow-xl">
+      <img src="https://cdn-icons-png.flaticon.com/512/565/565547.png" class="h-16 mx-auto mb-4" alt="FAQ">
+      <h3 class="text-xl font-semibold mb-2">Automated FAQ</h3>
+      <p class="text-gray-600">Smart responses to frequently asked questions about college processes.</p>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-6 transition hover:shadow-xl">
+      <img src="https://cdn-icons-png.flaticon.com/512/3208/3208725.png" class="h-16 mx-auto mb-4" alt="Custom Bots">
+      <h3 class="text-xl font-semibold mb-2">Custom Bots</h3>
+      <p class="text-gray-600">Tailor-made bots for departments, clubs, and academic support.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<!-- <section class="py-20 bg-gradient-to-r from-blue-100 to-purple-200 mt-20" data-aos="fade-up">
+  <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">What Students Say</h2>
+  <div class="grid md:grid-cols-2 gap-12 px-4 md:px-20">
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+      <p class="text-gray-700 italic">“This bot helped me check semester info at midnight before exams. Total lifesaver!”</p>
+      <p class="mt-4 text-blue-800 font-bold">— Anjali R., 3rd Year CSE</p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+      <p class="text-gray-700 italic">“No more waiting in queues for simple doubts. Everything’s just a question away!”</p>
+      <p class="mt-4 text-blue-800 font-bold">— Harsha T., 2nd Year ECE</p>
+    </div>
+  </div>
+</section> -->
+
+<!-- Call to Action -->
+<section class="mt-20 text-center">
+  <button onclick="openModal()" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-lg transition-transform transform hover:scale-110 shadow-md">
+    💬 Need Help? Chat Now!
+  </button>
+</section>
+
+<!-- Modal -->
+<div id="helpModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-white p-8 rounded-xl shadow-2xl w-96 relative animate-fadeIn">
+    <button onclick="closeModal()" class="absolute top-2 right-3 text-xl font-bold text-gray-400 hover:text-black">&times;</button>
+    <h3 class="text-xl font-semibold text-blue-700 mb-4">How can we help?</h3>
+    <p class="text-gray-600 mb-4">Visit our FAQ page or start texting us below.</p>
+    <a href="/contact" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full block text-center transition-all">Open Contact us</a>
+  </div>
+</div>
+
+<!-- Footer -->
+
+
+<!-- Modal Script -->
+<script>
+function openModal() {
+  document.getElementById("helpModal").classList.remove("hidden");
+}
+function closeModal() {
+  document.getElementById("helpModal").classList.add("hidden");
+}
+</script>
+{% endblock %}

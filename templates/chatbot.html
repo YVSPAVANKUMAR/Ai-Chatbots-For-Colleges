@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}ChatBot - College Help{% endblock %}
+
+{% block content %}
+<h2 class="text-3xl font-bold text-center text-blue-800 mb-8" data-aos="fade-down">Chat with {{ bot.name }}</h2>
+
+<div class="flex justify-center">
+  <div class="w-full max-w-screen-lg aspect-video rounded-xl shadow-xl overflow-hidden">
+    <iframe
+      src="http://localhost:3000/s/{{ bot.channel }}"
+      width="100%"
+      height="100%"
+      frameborder="0"
+      class="w-full h-full"
+    ></iframe>
+  </div>
+</div>
+
+{% endblock %}

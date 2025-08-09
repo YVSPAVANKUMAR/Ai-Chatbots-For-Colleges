@@ -1,0 +1,71 @@
+.card {
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.01);
+}
+
+/* Card Header Styling with Gradient */
+.card-header {
+    background: linear-gradient(to right, #007bff, #6610f2);
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Marquee Styling */
+marquee {
+    background-color: #6f42c1;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #ff5722;
+    border: none;
+    font-weight: bold;
+    padding: 8px 14px;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+}
+
+.btn-primary:hover {
+    background-color: #e64a19;
+}
+
+/* Image Styling */
+.card-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .card-body.row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-body .col-md-2,
+    .card-body .col-md-9,
+    .card-body .col-md-1 {
+        max-width: 100%;
+        flex: 0 0 100%;
+        margin-bottom: 10px;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+}
