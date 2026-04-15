@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}College ChatBot Portal{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased">
+
+  <nav class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 bg-white/95 shadow-sm backdrop-blur-md">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <a href="/" class="flex items-center gap-3">
+        <img src="{{ url_for('static', filename='images/base/logo.jpg') }}" alt="College ChatBot" class="h-12 w-12 rounded-2xl object-cover border border-slate-200 shadow-sm">
+        <div>
+          <p class="text-xs uppercase tracking-[0.35em] text-sky-600">College AI</p>
+          <p class="text-lg font-semibold text-slate-900">Campus ChatBot</p>
+        </div>
+      </a>
+      <div class="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex">
+        <a href="/" class="transition hover:text-sky-600">Home</a>
+        <a href="/dashboard" class="transition hover:text-sky-600">Dashboard</a>
+        <a href="/about" class="transition hover:text-sky-600">About</a>
+        <a href="/contact" class="transition hover:text-sky-600">Contact</a>
+      </div>
+      <button id="menuBtn" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:bg-slate-100 md:hidden">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <div id="menu" class="hidden border-t border-slate-200 bg-white/95 md:hidden">
+      <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 text-sm font-medium text-slate-700">
+        <a href="/" class="block rounded-xl px-4 py-3 transition hover:bg-slate-100">Home</a>
+        <a href="/dashboard" class="block rounded-xl px-4 py-3 transition hover:bg-slate-100">Dashboard</a>
+        <a href="/about" class="block rounded-xl px-4 py-3 transition hover:bg-slate-100">About</a>
+        <a href="/contact" class="block rounded-xl px-4 py-3 transition hover:bg-slate-100">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="pt-28">
+    <main class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+
+  <footer class="border-t border-slate-200 bg-white/90 py-8 text-center text-sm text-slate-500">
+    <p>College ChatBot Portal · AI-powered campus support for students and staff.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 900, once: true, mirror: false });
+    const menuBtn = document.getElementById('menuBtn');
+    const menu = document.getElementById('menu');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', function () {
+        menu.classList.toggle('hidden');
+      });
+    }
+  </script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

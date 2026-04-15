@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}About Us - College ChatBot{% endblock %}
+
+{% block content %}
+<section class="grid gap-10 lg:grid-cols-[0.95fr_0.9fr] items-center" data-aos="fade-up">
+  <div class="space-y-8">
+    <p class="text-sm font-semibold uppercase tracking-[0.35em] text-sky-600">About the portal</p>
+    <h1 class="section-title text-slate-900">A smarter way to support college communities.</h1>
+    <p class="section-subtitle">The College ChatBot Portal centralizes campus guidance with AI-powered chatbots that answer questions about admissions, schedules, departments, and events. The platform is tailored for colleges, students, and academic staff.</p>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div class="feature-card">
+        <h3 class="font-semibold text-slate-900">Clear campus communication</h3>
+        <p class="mt-3">Reliable answers for policies, contact details, and student services.</p>
+      </div>
+      <div class="feature-card">
+        <h3 class="font-semibold text-slate-900">Tailored support</h3>
+        <p class="mt-3">Bots optimized for each institution's unique academic needs.</p>
+      </div>
+    </div>
+  </div>
+  <div class="rounded-[2rem] bg-gradient-to-br from-sky-600/10 via-white to-purple-100 p-8 shadow-xl" data-aos="zoom-in">
+    <img src="{{ url_for('static', filename='images/home/Ai Bot.avif') }}" alt="Chatbot illustration" class="rounded-[1.75rem] object-cover w-full shadow-lg">
+  </div>
+</section>
+
+<section class="mt-16 grid gap-6 md:grid-cols-3" data-aos="fade-up">
+  <div class="feature-card">
+    <h2 class="font-semibold text-slate-900">Smart responses</h2>
+    <p class="mt-3">Instant guidance powered by Botpress AI for accurate campus replies.</p>
+  </div>
+  <div class="feature-card">
+    <h2 class="font-semibold text-slate-900">College-first design</h2>
+    <p class="mt-3">A polished layout for student support, faculty resources, and administration.</p>
+  </div>
+  <div class="feature-card">
+    <h2 class="font-semibold text-slate-900">Scalable delivery</h2>
+    <p class="mt-3">Easily adapt the portal to new colleges, departments, and campus teams.</p>
+  </div>
+</section>
+
+<section class="mt-16 section-card" data-aos="fade-up">
+  <div class="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] items-center">
+    <div>
+      <h2 class="section-title text-slate-900">Our mission</h2>
+      <p class="section-subtitle">We aim to simplify access to campus information and reduce administrative workload through intuitive AI chatbots. Students get the answers they need faster, while staff can focus on high-value support.</p>
+    </div>
+    <div class="rounded-[1.75rem] bg-slate-50 p-8 shadow-sm">
+      <p class="text-slate-700">Built to deliver professional support across academics, events, contacts, and campus services—without confusing menus or cluttered interfaces.</p>
+    </div>
+  </div>
+</section>
+
+<section class="mt-16 text-center" data-aos="fade-up">
+  <p class="text-sm uppercase tracking-[0.35em] text-slate-500">Next step</p>
+  <h2 class="mt-4 text-3xl font-semibold text-slate-900">Ready to improve campus support?</h2>
+  <p class="mt-3 text-slate-600 max-w-2xl mx-auto">Contact us to request an integration or explore the chatbot demos in the dashboard.</p>
+  <a href="/contact" class="btn-primary mt-8 inline-flex">Contact Us</a>
+</section>
+{% endblock %}   

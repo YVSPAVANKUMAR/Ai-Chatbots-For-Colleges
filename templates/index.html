@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block title %}Home - College ChatBot{% endblock %}
+
+{% block content %}
+<section class="section-card" data-aos="fade-up">
+  <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] items-center">
+    <div class="space-y-8">
+      <div class="space-y-4">
+        <p class="text-sm font-semibold uppercase tracking-[0.35em] text-sky-600">Campus AI Assistant</p>
+        <h1 class="section-title text-slate-900">Professional support for students, staff, and campus services.</h1>
+        <p class="section-subtitle">Discover a polished college chatbot portal for admissions, academic support, event details, and campus guidance. Everything is designed for clarity, speed, and reliability.</p>
+      </div>
+      <div class="flex flex-col gap-4 sm:flex-row">
+        <a href="/dashboard" class="btn-primary">Explore ChatBots</a>
+        <a href="/about" class="btn-secondary">Learn More</a>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="info-card">
+          <p class="text-xs uppercase tracking-[0.32em] text-slate-500">Always Available</p>
+          <p class="mt-3 font-semibold text-slate-900">24/7 campus support</p>
+        </div>
+        <div class="info-card">
+          <p class="text-xs uppercase tracking-[0.32em] text-slate-500">Smart Answers</p>
+          <p class="mt-3 font-semibold text-slate-900">Academic and administrative guidance</p>
+        </div>
+      </div>
+    </div>
+    <div class="space-y-6">
+      <div class="rounded-[2rem] bg-gradient-to-br from-sky-600/10 via-white to-purple-100 p-6 shadow-xl">
+        <img src="{{ url_for('static', filename='images/home/Ai Bot.avif') }}" alt="AI Bot" class="h-full w-full rounded-[1.75rem] object-cover">
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="feature-card">
+          <h3 class="font-semibold text-slate-900">Fast answers</h3>
+          <p class="mt-2">Receive quick responses for college-related queries.</p>
+        </div>
+        <div class="feature-card">
+          <h3 class="font-semibold text-slate-900">Campus-ready</h3>
+          <p class="mt-2">Designed for students, faculty, and administration.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mt-16 grid gap-12 lg:grid-cols-[0.9fr_1.1fr] items-center">
+  <div class="space-y-8" data-aos="fade-right">
+    <h2 class="section-title text-slate-900">Why use our chatbots?</h2>
+    <p class="section-subtitle">Our intelligent campus assistants help reduce wait times, answer FAQs, and connect students with the right resources without extra complexity.</p>
+    <ul class="grid gap-4 text-slate-700">
+      <li class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">Reliable academic and admission support.</li>
+      <li class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">Available anytime on desktop and mobile.</li>
+      <li class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">Fast access to college-specific resources.</li>
+      <li class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">Powered by Botpress AI for precise answers.</li>
+    </ul>
+  </div>
+  <div data-aos="fade-left">
+    <div class="section-card">
+      <img src="{{ url_for('static', filename='images/home/Ai Bot.avif') }}" alt="AI Bot" class="w-full rounded-[1.5rem] object-cover shadow-xl">
+    </div>
+  </div>
+</section>
+
+<section class="mt-16 section-card" data-aos="fade-up">
+  <h2 class="section-title text-slate-900 text-center">Features you’ll love</h2>
+  <div class="grid gap-6 md:grid-cols-3">
+    <div class="feature-card text-center">
+      <h3 class="font-semibold text-slate-900">Live support</h3>
+      <p class="mt-3">Instant, reliable help from AI-powered campus bots.</p>
+    </div>
+    <div class="feature-card text-center">
+      <h3 class="font-semibold text-slate-900">Automated FAQs</h3>
+      <p class="mt-3">Smart answers for common college questions.</p>
+    </div>
+    <div class="feature-card text-center">
+      <h3 class="font-semibold text-slate-900">Custom bots</h3>
+      <p class="mt-3">Tailored support for departments and academic teams.</p>
+    </div>
+  </div>
+</section>
+
+<section class="mt-16 text-center" data-aos="fade-up">
+  <button onclick="openModal()" class="btn-primary">Need help? Chat now</button>
+</section>
+
+<div id="helpModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 px-4 py-10">
+  <div class="w-full max-w-xl rounded-[2rem] bg-white p-8 shadow-2xl">
+    <div class="flex items-start justify-between gap-6">
+      <div>
+        <h3 class="text-2xl font-semibold text-slate-900">How can we help?</h3>
+        <p class="mt-3 text-slate-600">Visit our FAQ page or reach out to our support team for personalized assistance.</p>
+      </div>
+      <button onclick="closeModal()" class="rounded-full bg-slate-100 px-4 py-2 text-slate-700 transition hover:bg-slate-200">Close</button>
+    </div>
+    <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-end">
+      <a href="/contact" class="btn-primary">Contact Us</a>
+      <button onclick="closeModal()" class="btn-secondary">Dismiss</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openModal() {
+    document.getElementById('helpModal').classList.remove('hidden');
+  }
+  function closeModal() {
+    document.getElementById('helpModal').classList.add('hidden');
+  }
+</script>
+{% endblock %}

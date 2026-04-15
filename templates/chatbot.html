@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}ChatBot - College Help{% endblock %}
+
+{% block content %}
+<section class="space-y-8">
+  <div class="section-card text-center" data-aos="fade-down">
+    <p class="text-sm font-semibold uppercase tracking-[0.35em] text-sky-600">Live chat</p>
+    <h1 class="section-title text-slate-900">Chat with {{ bot.name }}</h1>
+    <p class="section-subtitle mx-auto max-w-2xl">Connect with the selected campus chatbot to get instant answers for admissions, schedules, and student services.</p>
+  </div>
+  <div class="rounded-[2rem] border border-slate-200 bg-white shadow-xl overflow-hidden" data-aos="zoom-in">
+    <div class="aspect-[16/9] w-full">
+      <iframe
+        src="http://localhost:3000/s/{{ bot.channel }}"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        class="h-full w-full"
+      ></iframe>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - College ChatBot{% endblock %}
+
+{% block content %}
+<section class="space-y-10">
+  <header class="section-card" data-aos="fade-down">
+    <div class="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] items-center">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.35em] text-sky-600">Bot portal</p>
+        <h1 class="section-title text-slate-900">Chatbots for college communities</h1>
+        <p class="section-subtitle">Explore institutional chat assistants configured to answer admissions, academic, and campus service questions for each college.</p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="info-card">
+          <p class="text-sm uppercase tracking-[0.32em] text-slate-500">College aligned</p>
+          <p class="mt-3 font-semibold text-slate-900">Dedicated bots for each campus.</p>
+        </div>
+        <div class="info-card">
+          <p class="text-sm uppercase tracking-[0.32em] text-slate-500">Instant access</p>
+          <p class="mt-3 font-semibold text-slate-900">Chat on desktop and mobile.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="grid gap-6 xl:grid-cols-2 items-stretch">
+    <article class="section-card h-full overflow-hidden" data-aos="fade-up">
+      <div class="flex flex-col gap-6 lg:flex-row lg:items-center">
+        <img src="{{ url_for('static', filename='images/dashboard/sacet.jpeg') }}" alt="ST ANN'S COLLEGE" class="h-36 w-full rounded-[1.5rem] object-cover shadow-lg lg:w-40">
+        <div class="flex-1">
+          <p class="text-xs uppercase tracking-[0.35em] text-sky-600">ST ANN'S COLLEGE</p>
+          <h2 class="mt-2 text-2xl font-semibold text-slate-900">St. Ann’s College of Engineering & Technology</h2>
+          <p class="mt-4 text-slate-600">A serene academic campus established in 2001, offering strong engineering programs with modern facilities near the Bay of Bengal.</p>
+        </div>
+      </div>
+      <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <span class="text-sm text-slate-600">Open chat support</span>
+        <a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/28/08/20250128082206-0MLEL39X.json" class="btn-primary">Chat</a>
+      </div>
+    </article>
+
+    <article class="section-card h-full overflow-hidden" data-aos="fade-up">
+      <div class="flex flex-col gap-6 lg:flex-row lg:items-center">
+        <img src="{{ url_for('static', filename='images/dashboard/bec.png') }}" alt="Bapatla Engineering College" class="h-36 w-full rounded-[1.5rem] object-cover shadow-lg lg:w-40">
+        <div class="flex-1">
+          <p class="text-xs uppercase tracking-[0.35em] text-sky-600">BAPATLA ENGINEERING COLLEGE</p>
+          <h2 class="mt-2 text-2xl font-semibold text-slate-900">Bapatla Engineering College</h2>
+          <p class="mt-4 text-slate-600">An accredited institution known for engineering excellence, strong ethics, and a broad portfolio of technical programs.</p>
+        </div>
+      </div>
+      <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <span class="text-sm text-slate-600">Chat with the campus bot</span>
+        <a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/02/01/06/20250201060603-QYVX20JF.json" class="btn-primary">Chat</a>
+      </div>
+    </article>
+
+    <article class="section-card h-full overflow-hidden" data-aos="fade-up">
+      <div class="flex flex-col gap-6 lg:flex-row lg:items-center">
+        <img src="{{ url_for('static', filename='images/dashboard/cec.png') }}" alt="Chirala Engineering College" class="h-36 w-full rounded-[1.5rem] object-cover shadow-lg lg:w-40">
+        <div class="flex-1">
+          <p class="text-xs uppercase tracking-[0.35em] text-sky-600">CHIRALA ENGINEERING COLLEGE</p>
+          <h2 class="mt-2 text-2xl font-semibold text-slate-900">Chirala Engineering College</h2>
+          <p class="mt-4 text-slate-600">A respected college approved by AICTE and affiliated with JNTU Kakinada, delivering high-quality technical education.</p>
+        </div>
+      </div>
+      <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <span class="text-sm text-slate-600">Start a chat</span>
+        <a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/28/08/20250128082240-IV6NFH3T.json" class="btn-primary">Chat</a>
+      </div>
+    </article>
+
+    <article class="section-card h-full overflow-hidden" data-aos="fade-up">
+      <div class="flex flex-col gap-6 lg:flex-row lg:items-center">
+        <img src="{{ url_for('static', filename='images/dashboard/vrs.jpeg') }}" alt="VRS & YRN College" class="h-36 w-full rounded-[1.5rem] object-cover shadow-lg lg:w-40">
+        <div class="flex-1">
+          <p class="text-xs uppercase tracking-[0.35em] text-sky-600">VRS & YRN COLLEGE</p>
+          <h2 class="mt-2 text-2xl font-semibold text-slate-900">VRS & YRN College</h2>
+          <p class="mt-4 text-slate-600">A long-standing institution since 1951, focused on moral values, quality academics, and community impact.</p>
+        </div>
+      </div>
+      <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <span class="text-sm text-slate-600">Launch the bot</span>
+        <a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/28/08/20250128082311-HRLKSL0T.json" class="btn-primary">Chat</a>
+      </div>
+    </article>
+  </div>
+</section>
+{% endblock %}
