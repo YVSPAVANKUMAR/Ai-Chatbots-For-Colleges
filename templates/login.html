@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Login - College ChatBot{% endblock %}
+
+{% block content %}
+<section class="mx-auto max-w-2xl section-card text-center space-y-6" data-aos="fade-up">
+  <p class="text-sm font-semibold uppercase tracking-[0.35em] text-sky-600">Login</p>
+  <h1 class="section-title text-slate-900">Access the chatbot portal</h1>
+  <p class="section-subtitle mx-auto max-w-xl">This demo login page is ready for future authentication work. For now, submitting the form takes you to the dashboard.</p>
+
+  <form method="post" class="mx-auto grid max-w-md gap-4 text-left">
+    <label class="space-y-2">
+      <span class="text-sm font-medium text-slate-700">Email</span>
+      <input type="email" name="email" class="w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none transition focus:border-sky-500" placeholder="student@example.com">
+    </label>
+    <label class="space-y-2">
+      <span class="text-sm font-medium text-slate-700">Password</span>
+      <input type="password" name="password" class="w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none transition focus:border-sky-500" placeholder="Enter your password">
+    </label>
+    <button type="submit" class="btn-primary justify-center">Continue</button>
+  </form>
+</section>
+{% endblock %}

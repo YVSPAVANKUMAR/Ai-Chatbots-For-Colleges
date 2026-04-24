@@ -8,16 +8,24 @@
     <h1 class="section-title text-slate-900">Chat with {{ bot.name }}</h1>
     <p class="section-subtitle mx-auto max-w-2xl">Connect with the selected campus chatbot to get instant answers for admissions, schedules, and student services.</p>
   </div>
+
   <div class="rounded-[2rem] border border-slate-200 bg-white shadow-xl overflow-hidden" data-aos="zoom-in">
     <div class="aspect-[16/9] w-full">
       <iframe
-        src="http://localhost:3000/s/{{ bot.channel }}"
+        src="{{ bot.shareable_url }}"
+        title="{{ bot.name }}"
         width="100%"
         height="100%"
+        loading="lazy"
         frameborder="0"
         class="h-full w-full"
       ></iframe>
     </div>
+  </div>
+
+  <div class="section-card text-center">
+    <p class="text-slate-600">If the embedded chat does not load inside the page, open it directly in a new tab.</p>
+    <a href="{{ bot.shareable_url }}" target="_blank" rel="noopener noreferrer" class="btn-primary mt-4 inline-flex">Open Chat in New Tab</a>
   </div>
 </section>
 {% endblock %}

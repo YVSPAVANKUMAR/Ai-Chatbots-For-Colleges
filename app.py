@@ -1,61 +1,91 @@
-from flask import Flask, render_template, request, redirect, url_for
-from pymongo import MongoClient
-from bson.objectid import ObjectId
+import os
+
+from flask import Flask, abort, redirect, render_template, request, url_for
 
 app = Flask(__name__)
-app.secret_key = "your_secret_key"
+app.secret_key = os.environ.get("SECRET_KEY", "change-this-secret-key")
 
-# MongoDB Connection
-client = MongoClient("mongodb://localhost:27017/")
-db = client["college_chatbot"]
-bots_col = db["bots"]
+BOTS = [
+    {
+        "slug": "st-anns",
+        "campus_label": "ST ANN'S COLLEGE",
+        "name": "St. Ann's College of Engineering & Technology",
+        "description": "A serene academic campus established in 2001, offering strong engineering programs with modern facilities near the Bay of Bengal.",
+        "image": "images/dashboard/sacet.jpeg",
+        "shareable_url": "https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/28/08/20250128082206-0MLEL39X.json",
+        "status_text": "Open chat support",
+    },
+    {
+        "slug": "bapatla-engineering-college",
+        "campus_label": "BAPATLA ENGINEERING COLLEGE",
+        "name": "Bapatla Engineering College",
+        "description": "An accredited institution known for engineering excellence, strong ethics, and a broad portfolio of technical programs.",
+        "image": "images/dashboard/bec.png",
+        "shareable_url": "https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/02/01/06/20250201060603-QYVX20JF.json",
+        "status_text": "Chat with the campus bot",
+    },
+    {
+        "slug": "chirala-engineering-college",
+        "campus_label": "CHIRALA ENGINEERING COLLEGE",
+        "name": "Chirala Engineering College",
+        "description": "A respected college approved by AICTE and affiliated with JNTU Kakinada, delivering high-quality technical education.",
+        "image": "images/dashboard/cec.png",
+        "shareable_url": "https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/28/08/20250128082240-IV6NFH3T.json",
+        "status_text": "Start a chat",
+    },
+    {
+        "slug": "vrs-yrn-college",
+        "campus_label": "VRS & YRN COLLEGE",
+        "name": "VRS & YRN College",
+        "description": "A long-standing institution since 1951, focused on moral values, quality academics, and community impact.",
+        "image": "images/dashboard/vrs.jpeg",
+        "shareable_url": "https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/28/08/20250128082311-HRLKSL0T.json",
+        "status_text": "Launch the bot",
+    },
+]
 
-# Sample Bot Document Format in MongoDB
-# {
-#   "name": "Library Bot",
-#   "description": "Answers library-related questions",
-#   "channel": "library-bot"   # Botpress shareable link path
-# }
+BOT_LOOKUP = {bot["slug"]: bot for bot in BOTS}
 
-# ROUTES
 
 @app.route("/")
 def home():
     return render_template("index.html")
 
+
 @app.route("/dashboard")
 def dashboard():
-    bots = list(bots_col.find())
-    return render_template("dashboard.html", bots=bots)
+    return render_template("dashboard.html", bots=BOTS)
 
-@app.route("/chatbot/<bot_id>")
-def chatbot(bot_id):
-    bot = bots_col.find_one({"_id": ObjectId(bot_id)})
+
+@app.route("/chatbot/<bot_slug>")
+def chatbot(bot_slug):
+    bot = BOT_LOOKUP.get(bot_slug)
     if not bot:
-        return "Bot not found", 404
+        abort(404)
     return render_template("chatbot.html", bot=bot)
+
 
 @app.route("/about")
 def about():
     return render_template("about.html")
 
+
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
 
-# Placeholder login route (to be expanded)
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        # TODO: Authenticate user
         return redirect(url_for("dashboard"))
     return render_template("login.html")
 
-# Custom 404 page
+
 @app.errorhandler(404)
-def page_not_found(e):
+def page_not_found(error):
     return "<h1>404 - Page Not Found</h1>", 404
 
-# MAIN
+
 if __name__ == "__main__":
     app.run(debug=True)
